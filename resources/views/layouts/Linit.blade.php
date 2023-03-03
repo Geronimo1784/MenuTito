@@ -144,7 +144,7 @@
 
         <div class="Sombra-3" style="height: 60px; background-color: #ffffff; z-index: 150; position: fixed; width: 100%;">
             <div class="container"> 
-                <div class="Pl-30 Pr-30"> 
+                <div> 
                     
                     {{-- Lado Izquerdo --}}
                     <div class="dsfr Just-l" style="width: 100%"> 
