@@ -18,7 +18,7 @@ class InitController extends Controller{
             ->where('state' , '1')
             ->get();
         
-        $P = Productos::select('id', 'title', 'description', 'Ingredients', 'Price', 'descuento', 'Coding', 'category', 'image', 'add')
+        $P = Productos::select('id', 'title', 'description', 'Ingredients', 'Price', 'descuento', 'type_items', 'Coding', 'category', 'image', 'add')
             /*->where('id_user', auth()->user()->id)*/
             ->where('state' , '1')
             ->get();

@@ -1,6 +1,7 @@
 @php
     $subm = 0;
     $imgr = env('PATH_IMG_STORE');
+    use App\Models\Init\Opciones;
 @endphp
 
 @extends('layouts.Linit')
@@ -51,9 +52,19 @@
             @foreach ($Kat as $link)
                 @foreach ($Group as $Gp)
                     @if ($Gp->category == $link->id)
-                        <div>
+                        <a  class="al mex" data-code="{{ $link->id }}" href="#{{$link->name_categ}}">
+                            <div class="Pr-25">
+                                <div class="option_m Opt_ord">
+                                    <div class="ovh">
+                                        <img class="rotate" src="{{ asset('Imgs/menu/Punters.png')}}" alt="" width="25"> 
+                                    </div> 
+                                    <span class="option_mt"> {{$link->name_categ}}</span> 
+                                </div>
+                            </div> 
+                         </a>    
+{{--                         <div>
                             <a  class="al mex" data-code="{{ $link->id }}" href="#{{$link->name_categ}}"> {{$link->name_categ}} </a>
-                        </div>
+                        </div> --}}
                     @endif
                 @endforeach
             @endforeach
@@ -89,30 +100,68 @@
                                         itr.style.paddingTop = '20px';
                                         itr.style.paddingBottom = '20px';
                                     </script>
-                                
-                                    <div class="Box-cart Sombra-2">
-                                        <div class="tac WH-100" style="height: 200px; overflow: hidden;">
-                                            <img class="iPush" src="{{$imgr}}/{{$item->image}}" alt="image" height="300">
-                                        </div>
-                                        <div class="tac WH-100 Pd-10 fsa-20 fwa-60 ffp">{{ $item->title }}</div>
-                                        <div style="height: 70px; overflow: hidden;">
-                                            <div class="tex-g4 fsa-14 Pl-30 Pr-30"> {{ $item->Ingredients }} </div>
-                                        </div>
-                                        <div class="dsf Pl-30 Pr-3">
-                                            <div class="WH-40">
-                                                <div class="fsa-13 fwa-60 Pl-10" style="color: #ec790e">Total price</div>
-                                                <div class="fsa-25 fwa-60 ffp"><span style="color: #f8cb37; font-size: 20px;">$ </span>{{number_format($item->Price, 0, ',', '.')}}</div>
+
+                                    @if ($item->type_items === 'BASIC')
+
+                                        <div class="Box-cart Sombra-2">
+                                            <div class="tac WH-100" style="height: 200px; overflow: hidden;">
+                                                <img class="iPush" src="{{$imgr}}/{{$item->image}}" alt="image" height="300">
                                             </div>
-                                            <div class="WH-60 Pr-30 Pt-10 ">
-                                                <div class="Lqpd poin" data-img="{{$imgr}}/{{$item->image}}"  data-code="{{ $item->Coding }}" style="height: 50px; width: 95%; background-color: #000; border-radius: 0px 15px 15px 15px;">
-                                                    <div class="Jdcc Pt-10">
-                                                        <div> <img class="movicon" src="{{ asset('Imgs/Clients/Carrito-am.png')}}" alt="" width="22"> </div>
-                                                        <div class="Pl-5 tw fsa-14 fwa-60">Lo quiero pedir</div>
+                                            <div class="tac WH-100 Pd-10 fsa-20 fwa-60 ffp">{{ $item->title }}</div>
+                                            <div style="height: 70px; overflow: hidden;">
+                                                <div class="tex-g4 fsa-14 Pl-30 Pr-30"> {{ $item->Ingredients }} </div>
+                                            </div>
+                                            <div class="dsf Pl-30 Pr-3">
+                                                <div class="WH-40">
+                                                    <div class="fsa-13 fwa-60 Pl-10" style="color: #ec790e">Total price</div>
+                                                    <div class="fsa-25 fwa-60 ffp"><span style="color: #f8cb37; font-size: 20px;">$ </span>{{number_format($item->Price, 0, ',', '.')}}</div>
+                                                </div>
+                                                <div class="WH-60 Pr-30 Pt-10 ">
+                                                    <div class="poin" style="height: 45px; line-height: 22px; width: 95%; background-color: #ffffff; border: 1px dashed #6b6b6b; border-radius: 0px 15px 15px 15px; line">
+                                                        <div class="Jdcc Pt-10">
+                                                            <div class="Pl-5 tw fsa-14 fwa-60 tn">- Titofood -</div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+
+                                    @else
+
+                                        <div class="Box-cart Sombra-2">
+                                            <div class="tac WH-100" style="height: 200px; overflow: hidden;">
+                                                <img class="iPush" src="{{$imgr}}/{{$item->image}}" alt="image" height="300">
+                                            </div>
+                                            <div class="tac WH-100 Pd-10 fsa-20 fwa-60 ffp">{{ $item->title }}</div>
+                                            <div style="height: 70px; overflow: hidden;">
+                                                <div class="tex-g4 fsa-14 Pl-30 Pr-30"> {{ $item->Ingredients }} </div>
+                                            </div>
+                                            <div class="dsf Pl-30 Pr-3">
+                                                <div class="WH-40">
+                                                    <div class="fsa-13 fwa-60 Pl-10" style="color: #ec790e">Total price</div>
+                                                    <div class="fsa-25 fwa-60 ffp"><span style="color: #f8cb37; font-size: 20px;">$ </span > <span id="Price_{{$item->id}}">{{number_format($item->Price, 0, ',', '.')}}</span> </div>
+                                                </div>
+                                                <div class="WH-60 Pr-30">
+                                                    @php
+                                                        $Option = Opciones::where('product_id', $item->id)
+                                                                        ->orderBy('name_option', 'desc')
+                                                                        ->get();
+                                                    @endphp
+
+                                                    <div class="Pd-5"></div>
+                                                    <select name="tipo_item" id="Selector_{{$item->id}}" class="Sel-inp fsa-14" onchange="UpdatePrice(this, {{$item->id}});">
+
+                                                        @foreach ($Option as $opt)
+                                                            <option value="{{$opt->price_option}}">{{ $opt->name_option }}</option>   
+                                                        @endforeach
+                         
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endif  
                                 @endif
                             @endforeach
                         </div>     
@@ -243,7 +292,12 @@
         an.show_details("Lqpd", "SMC", "DP", '20');
         an.HideM("clos-m", "SMC", "DP"); 
 
-
+        function UpdatePrice(Selec, idr){
+            var sleTex = Selec.options[Selec.selectedIndex].innerHTML;
+            var selVal = Selec.value;
+            Tex = document.getElementById("Price_"+idr);
+            Tex.innerHTML = new Intl.NumberFormat('de-DE').format(selVal) ;
+        }
 
 
     </script>

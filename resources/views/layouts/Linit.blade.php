@@ -13,9 +13,10 @@
         <script src="{{asset('Js/Aspire.js')}}"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="icon" href="{{asset('Imgs/menu/Logo_icon.png')}}"> 
 
 
-        <title> Sistema de Restaurantes </title>
+        <title> ..:: Menú Dígital Titofood.com ::.. </title>
     </head>
     <body>
 
@@ -52,6 +53,7 @@
                     </div>
                 </div>
                 <div id="Send" class="dsn">
+                    
                     <div class="Pd-30"></div>
                     <div class="Pd-40"></div>
                     <div class="tac"><img style="border-radius: 50%;" src='/Imgs/Clients/gif-saved.gif' alt="" width="70"></div>
@@ -60,6 +62,7 @@
                 </div>
 
                 <div id="MsgOk" class="dsn tac">
+
                     <div class="swal2-icon swal2-success swal2-icon-show" style="display: flex;">
                         <div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
                         <span class="swal2-success-line-tip"></span> <span class="swal2-success-line-long"></span>
@@ -67,6 +70,7 @@
                         <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div>
                         <div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
                     </div>
+
                     <div class="Pd-5"></div>
                     <div class="tex-g6 fsa-30 fwa-60" >Pedido Ok!</div>
                     <div class="Pb-10">Su pedido ha sido registrado corectamente.</div>
@@ -158,10 +162,10 @@
                                 </div>
 
                                 <div class="d-flex Pd-7 cart">
-                                    <div class="btn btn-icon btn-color-white bg-hover-white bg-hover-opacity-10 w-30px h-30px h-40px w-40px position-relative" id="abrir_store">
+{{--                                     <div class="btn btn-icon btn-color-white bg-hover-white bg-hover-opacity-10 w-30px h-30px h-40px w-40px position-relative" id="abrir_store">
                                         <div class="SCart"><img src="/Imgs/img/Icons-carr_2.png" alt="" width="35"></div>
                                         <div  style="text-align: center; font-size: 13px; font-weight: 700; color: #fff; width: 23px; height: 23px; background-color: #ff004c; position: absolute; top: -3px;left: 39px; border-radius: 15px;" id="Nicrt">20</div>
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                             </div>
@@ -184,20 +188,21 @@
         {{-- Menu Izquierdo --}}
 
             <div class="mleft Sombra-m">
-                <div style="background-color: #eeff00; width: 100%; height: 140px;">
-                    <div class="dsf Pd-20" >
-                        <div class="Sombra" style="width: 60px; height: 60px;border-radius: 50px;">
-{{--                             <img src="/application/img/user_menu.png" alt="" width="60">
- --}}                        </div> 
-                        <div class="Pd-3"></div>
-                        <div class="Pd-10">
-                            <div class="tex-g7 fsa-14">Hola, </div>
-                            <div class="tex-g7 Pb-10"></div>
-                            <div class="bgr-6 Pd-5 tac fsa-12" style="border-radius: 20px;"> Alcarbono.com
+                    <div style="background-color: #ffffff;">
+                        <div style="padding-top: 30px; padding-left: 40px;">
+                            <div class="Sombra-l" style="width: 110px; height: 110px; background-color: #FFF; border-radius: 60px; overflow: hidden; padding: 5px;">
+                                <img src="{{ asset('Imgs/img/Titor.png')}}" alt="" width="100">
                             </div>
                         </div>
+                        <div class="Pl-35 Pt-10 fsa-27 fwa-60 tn">Titofood  </div>
+                        <div class="Pl-35 fsa-15" style="color: #4e4e4e">El Tito ahora es food.</div> 
+                        <div class="Pd-10"></div>
                     </div>
-                </div>
+
+                    <div style="letter-spacing: 2px; font-size: 12px; font-weight: 700; padding: 15px;">
+                        <span style="padding-left: 40px; color: #34bb38;">MENU</span> 
+                    </div>
+
                 <div style="padding: 5px 25px">
                     <section>
                         @yield('Menu')
@@ -242,14 +247,11 @@
             });            
             
             document.addEventListener("click", (e) => {
+                
                 if (!e.target.classList.contains("mleft")) {
                     document.querySelector(".mleft").classList.remove("slider_mleft");
                     document.getElementById("Show-Modal-l").style.display = 'none';
                 }
-/*                 if (!e.target.classList.contains("mright")) {
-                    document.querySelector(".mright").classList.remove("slider_right");
-                    document.getElementById("Show-Modal-r").style.display = 'none';
-                } */
 
                 if (e.target.classList.contains("dsmr")) {
                     document.querySelector(".mright").classList.remove("slider_right");
@@ -261,7 +263,6 @@
             an.inc(".link-inc");
             an.dec(".link-dec");
             an.addi(".AddToCart");
-            an.Rstc('Nicrt');
             an.Rct('.SCart'); 
             an.SVPD('.SVPD'); 
             an.Hc('ClOk', 'SMSP', 'Box_CC');  

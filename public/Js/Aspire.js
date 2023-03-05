@@ -258,7 +258,6 @@ var an = {
 
             }            
             
-            an.Rstc('Nicrt');
 
 /*             ARS.push({ [Jpp.code] : Items });
             window.localStorage.setItem("Pedido", JSON.stringify(ARS));
@@ -269,18 +268,6 @@ var an = {
         });
     },
 
-    Rstc : (a)=>{
-
-        Stp = localStorage.getItem('Pedido'); 
-        JStp = JSON.parse(Stp);
-
-        if(JStp){                        
-            document.getElementById(a).innerHTML = JStp.length;
-        }else{
-            document.getElementById(a).innerHTML = "0";                              
-        }
-
-    },
     
     Rct : (a)=>{
         $(a).on("click", function(){
@@ -351,7 +338,6 @@ var an = {
             }
 
             an.Cciu();
-            an.Rstc('Nicrt');
 
             
         }); 

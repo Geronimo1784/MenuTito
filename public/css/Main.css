@@ -543,20 +543,17 @@
   }
 
   .option_m{
-    padding: 8px 0px 8px 30px;
+    padding: 3px 0px 3px 30px;
     font-size: 15px;
     display: flex;
     cursor: pointer;
-    color: #7f7f7f;
+    color: #242424;
     font-weight: 600;
-    border: 1px dashed #ffffff00;
 
   }
 
   .option_m:hover{
-    background-color: #E1EFB0;
-    color: #3c3c3c;
-    border: 1px dashed #46B04A;
+    color: #34bb38;
   }
   .option_m:active{
     background-color: rgb(199, 224, 244);
