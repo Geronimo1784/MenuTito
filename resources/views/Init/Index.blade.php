@@ -205,7 +205,7 @@
                 .flags{
                     width: 100%;
                     background-color: #F0F0F0;
-                    padding: 0px 0px;
+                    padding: 0px 5px;
                 }
             
             }
