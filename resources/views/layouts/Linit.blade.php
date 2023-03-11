@@ -47,7 +47,7 @@
 
         </style>
 
-        <a href="https://wa.me/3001452277?text=Hola Titofood, Quiero Pedir">
+        <a href="https://wa.me/+573001452277?text=Hola Titofood, Quiero Pedir">
             <div class="Box-What">
                 <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
