@@ -42,13 +42,12 @@
                 right: 0%;
                 top: 90%;
                 margin-right: 10px;
+                margin-bottom: 10px;
             }
 
         </style>
 
-<a aria-label="Chat on WhatsApp" href="https://wa.me/3116791545"> <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" /> </a>
-
-        <a href="https://wa.me/3116791545?text=Hola%Titofood%Quiero%Pedir">
+        <a href="https://wa.me/3116791545?text=Hola Titofood, Quiero Pedir">
             <div class="Box-What">
                 <svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
