@@ -47,6 +47,8 @@
 
     <div class="WH-100" style="background-color: #F0F0F0;">
 
+
+
         {{-- Seccion menu --}}
         @section('Menu')
             @foreach ($Kat as $link)
@@ -71,6 +73,10 @@
         @endsection
 
         <div class="container-x">
+
+
+
+            
             <div class="flags" id="Rflag">
                 {{-- <p>Window resized <span id="demo">0</span> times.</p> --}}    
                 @foreach ($Kat as $K) {{-- Categorias --}}
