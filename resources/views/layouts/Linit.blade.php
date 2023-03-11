@@ -40,7 +40,7 @@
                 position: fixed;
                 z-index: 1001;
                 right: 0%;
-                top: calc(90% - 10px);
+                top: calc(90% - 20px);
                 margin-right: 10px;
                 margin-bottom: 10px;
             }
