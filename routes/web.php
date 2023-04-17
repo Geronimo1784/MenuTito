@@ -17,6 +17,7 @@ use App\Http\Controllers\Init\InitController;
 #Init();
 Route::get('/', [InitController::class, 'Index']);  
 Route::get('Detail-item/{code}', [InitController::class, 'Details']);
+
     
 #Guardar Pedidos 
 Route::get('Save-Pedido', [InitController::class, 'SavePedido']); 

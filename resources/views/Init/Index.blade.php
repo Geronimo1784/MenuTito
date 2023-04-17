@@ -111,7 +111,7 @@
 
                                         <div class="Box-cart Sombra-2">
                                             <div class="tac WH-100" style="height: 200px; overflow: hidden;">
-                                                <img class="iPush" src="{{$imgr}}/{{$item->image}}" alt="image" height="300">
+                                                <img class="iPush Lqpd" src="{{$imgr}}/{{$item->image}}" data-code="{{ $item->Coding }}" data-price="{{ $item->Price }}" alt="image" height="300">
                                             </div>
                                             <div class="tac WH-100 Pd-10 fsa-20 fwa-60 ffp">{{ $item->title }}</div>
                                             <div style="height: 70px; overflow: hidden;">
@@ -136,7 +136,7 @@
 
                                         <div class="Box-cart Sombra-2">
                                             <div class="tac WH-100" style="height: 200px; overflow: hidden;">
-                                                <img class="iPush" src="{{$imgr}}/{{$item->image}}" alt="image" height="300">
+                                                <img class="iPush Lqpd"   src="{{$imgr}}/{{$item->image}}"  data-code="{{ $item->Coding }}" data-price="{{ $item->Price }}" alt="image" height="300">
                                             </div>
                                             <div class="tac WH-100 Pd-10 fsa-20 fwa-60 ffp">{{ $item->title }}</div>
                                             <div style="height: 70px; overflow: hidden;">
@@ -177,126 +177,9 @@
         </div>
         <div class="Pd-40"></div>
     </div>
-        <style>
 
-            .Box-cart{
-                width: 385px;
-                height: 400px;
-                background-color: #FFF;
-                margin: 15px;
-                border-radius: 15px;
-            }
-
-            .container-x{
-                width: 100%;
-                background-color: #F0F0F0;
-                display: flex; 
-                justify-content: center; 
-                align-items: center;
-            }
-
-            .flags{
-                width: 1400px;
-                background-color: #F0F0F0;
-                padding: 0px 0px 0px 65px;
-            }
-
-            /* ---------- Responsive -------- */
-            @media only screen and (min-width: 1px) and (max-width: 620px) {
-
-                .Box-cart{
-                    background-color: #ffffff;
-                    width: 100%;
-                }
-                .flags{
-                    width: 100%;
-                    background-color: #F0F0F0;
-                    padding: 0px 5px;
-                }
-            
-            }
-
-
-            /* ---------- Responsive -------- */
-            @media only screen and (min-width: 620px) and (max-width: 764px) {
-
-                .Box-cart{
-                    background-color: #ffffff;
-                    width: 100%;
-                }
-                .flags{
-                    width: 100%;
-                    background-color: #F0F0F0;
-                    padding: 0px 30px;
-                }
-            
-            }
-            
-            @media only screen and (min-width: 764px) and (max-width: 990px) {
-
-                .Box-cart{
-                    background-color: #ffffff;
-                    width: 45.8%;
-                }
-                .flags{
-                    width: 100%;
-                    background-color: #F0F0F0;
-                    padding: 0px 0px 0px 15px;
-                }
-
-            }
-            
-            @media only screen and (min-width: 990px) and (max-width: 1200px) {
-
-                .Box-cart{
-                    background-color: #ffffff;
-                    width: 46%;
-                }
-
-                .flags{
-                    width: 900px;
-                    background-color: #F0F0F0;
-                    padding: 0px 0px 0px 10px;
-                }
-            
-            }
-
-            @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-
-                .Box-cart{
-                    background-color: #ffffff;
-                    width: 500px;
-                }
-
-                .flags{
-                    width: 1070px;
-                    background-color: #F0F0F0;
-                    padding: 0px 0px 0px 5px;
-                }
-            
-            }
-
-        </style>
-
-
-
-{{--     <div class="WH-100">
-        @include('layouts.footer')
-    </div> --}}
 
     <script>
-/* 
-        window.addEventListener("resize", myFunction);
-
-        var x = 0;
-
-        function myFunction() {
-            var txt = x += 1;
-            document.getElementById("demo").innerHTML = window.innerWidth;
-            //document.getElementById("Rflag").style.paddingLeft = (window.innerWidth) - (window.innerWidth-1) +'px';
-        } */
-        an.show_details("Lqpd", "SMC", "DP", '20');
-        an.HideM("clos-m", "SMC", "DP"); 
 
         function UpdatePrice(Selec, idr){
             var sleTex = Selec.options[Selec.selectedIndex].innerHTML;

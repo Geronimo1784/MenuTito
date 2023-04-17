@@ -738,6 +738,7 @@
   display: none;
 }
 
+
 .Box_CC{
 
   top: calc(50% - 200px); 
@@ -761,3 +762,158 @@
   float: right;
 }
 
+
+.Box-cart{
+  width: 385px;
+  height: 400px;
+  background-color: #FFF;
+  margin: 15px;
+  border-radius: 15px;
+}
+
+.container-x{
+  width: 100%;
+  background-color: #F0F0F0;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.flags{
+  width: 1400px;
+  background-color: #F0F0F0;
+  padding: 0px 0px 0px 65px;
+}
+
+.dsf-col{
+  display: flex;
+  padding: 20px;
+}
+
+.Col-50R{
+  width: 50%;
+}
+
+.PdR-5{
+  padding: 5px;
+}
+
+/* ---------- Responsive -------- */
+@media only screen and (min-width: 1px) and (max-width: 620px) {
+
+  .Box-cart{
+      background-color: #ffffff;
+      width: 100%;
+  }
+  .flags{
+      width: 100%;
+      background-color: #F0F0F0;
+      padding: 0px 5px;
+  }
+
+  .Box_1024_768{
+    width: 100%;
+    top: 0%; 
+    left: 0%; 
+    height: calc(100% - 0px); 
+    border-radius: 0px; 
+}
+
+  .dsf-col{
+    display: block;
+    height: calc(100% - 60px);
+    padding: 10px 10px 10px 10px;
+  }
+
+  .dsf-col{
+    display: block;
+    height: calc(100% - 60px);
+    padding: 10px 10px 10px 10px;
+  }
+  .Col-50R{
+    width: 100%;
+  }
+  .PdR-5{
+    padding: 10px;
+  }
+
+}
+
+
+/* ---------- Responsive -------- */
+@media only screen and (min-width: 620px) and (max-width: 764px) {
+
+  .Box-cart{
+      background-color: #ffffff;
+      width: 100%;
+  }
+  .flags{
+      width: 100%;
+      background-color: #F0F0F0;
+      padding: 0px 30px;
+  }
+  .Box_1024_768{
+    width: 100%;
+    top: 0%; 
+    left: 0%; 
+    height: calc(100% - 0px); 
+    border-radius: 0px; 
+}
+
+  .dsf-col{
+    display: block;
+    height: calc(100% - 60px);
+    padding: 10px 10px 10px 10px;
+  }
+  .Col-50R{
+    width: 100%;
+  }
+  .PdR-5{
+    padding: 10px;
+  }
+
+}
+
+@media only screen and (min-width: 764px) and (max-width: 990px) {
+
+  .Box-cart{
+      background-color: #ffffff;
+      width: 45.8%;
+  }
+  .flags{
+      width: 100%;
+      background-color: #F0F0F0;
+      padding: 0px 0px 0px 15px;
+  }
+
+}
+
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
+
+  .Box-cart{
+      background-color: #ffffff;
+      width: 46%;
+  }
+
+  .flags{
+      width: 900px;
+      background-color: #F0F0F0;
+      padding: 0px 0px 0px 10px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+  .Box-cart{
+      background-color: #ffffff;
+      width: 500px;
+  }
+
+  .flags{
+      width: 1070px;
+      background-color: #F0F0F0;
+      padding: 0px 0px 0px 5px;
+  }
+
+}
